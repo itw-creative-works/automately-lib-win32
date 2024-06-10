@@ -59,7 +59,7 @@
   "dependencies": {
     "bindings": "1.5.0",
     "cmake-js": "6.1.0",
-    "itwcw-package-analytics": "^1.0.0",
+    "itwcw-package-analytics": "^1.0.1",
     "node-addon-api": "3.0.0"
   },
   "devDependencies": {
