@@ -1,0 +1,68 @@
+{
+  "name": "automately-lib-win32",
+  "version": "1.0.0",
+  "description": "automately is an N-API module for desktop automation with node",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "howToUpdate": [
+    "1. Search for @nut-tree and replace it with our namespace"
+  ],
+  "scripts": {
+    "clean": "cmake-js clean",
+    "patch": "node ./patch-packagename.js",
+    "build:debug": "cmake-js rebuild --CDCMAKE_OSX_ARCHITECTURES=\"arm64;x86_64\" --debug",
+    "_build:release": "cmake-js rebuild --CDCMAKE_OSX_ARCHITECTURES=\"arm64;x86_64\"",
+    "_prepublishOnly": "npm run build:release",
+    "publish:next": "npm publish --tag next",
+    "prepare": "node -e 'require(`prepare-package`)()'",
+    "prepare:watch": "nodemon -w ./src -e '*' --exec 'npm run prepare'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itw-creative-works/automately-lib-win32.git"
+  },
+  "keywords": [
+    "GUI",
+    "Automation",
+    "mouse",
+    "keyboard",
+    "screenshot",
+    "image",
+    "desktop",
+    "screen",
+    "recognition",
+    "autohotkey"
+  ],
+  "author": "ITW Creative Works",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/itw-creative-works/automately-lib-win32/issues"
+  },
+  "homepage": "https://github.com/itw-creative-works/automately-lib-win32",
+  "engines": {
+    "node": ">=10.15.3"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ],
+  "preparePackage": {
+    "input": "./src",
+    "output": "./dist",
+    "replace": {}
+  },
+  "dependencies": {
+    "bindings": "1.5.0",
+    "cmake-js": "6.1.0",
+    "itwcw-package-analytics": "^1.0.0",
+    "node-addon-api": "3.0.0"
+  },
+  "devDependencies": {
+    "prepare-package": "^1.1.5"
+  }
+}
