@@ -1,6 +1,6 @@
 {
   "name": "automately-lib-win32",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "automately is an N-API module for desktop automation with node",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -14,7 +14,7 @@
     "_build:release": "cmake-js rebuild --CDCMAKE_OSX_ARCHITECTURES=\"arm64;x86_64\"",
     "_prepublishOnly": "npm run build:release",
     "publish:next": "npm publish --tag next",
-    "prepare": "node -e 'require(`prepare-package`)()'",
+    "prepare": "node -e \"require('prepare-package')()\"",
     "prepare:watch": "nodemon -w ./src -e '*' --exec 'npm run prepare'"
   },
   "repository": {
@@ -59,10 +59,10 @@
   "dependencies": {
     "bindings": "1.5.0",
     "cmake-js": "6.1.0",
-    "itwcw-package-analytics": "^1.0.1",
+    "itwcw-package-analytics": "^1.0.4",
     "node-addon-api": "3.0.0"
   },
   "devDependencies": {
-    "prepare-package": "^1.1.5"
+    "prepare-package": "^1.1.12"
   }
 }
